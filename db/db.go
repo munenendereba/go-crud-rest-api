@@ -93,8 +93,8 @@ func DeleteMovie(id string) error {
 	var deletedMovie Movie
 
 	result := db.Where("id = ?", id).Delete(&deletedMovie)
+
 	if result.RowsAffected == 0 {
-		log.Println("delete movie:", result.Error.Error())
 		return errors.New("movie not deleted")
 	}
 

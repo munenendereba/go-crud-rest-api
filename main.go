@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"munenendereba/go-crud-api/db"
+	"munenendereba/go-crud-api/router"
+)
 
 func main() {
-	fmt.Println("Sema")
+	db.InitPostgresDB()
+	router.InitRouter().Run()
 }
